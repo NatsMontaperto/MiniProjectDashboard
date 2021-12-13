@@ -1,0 +1,285 @@
+body { 
+  color: white;
+  display: grid;
+  grid-template-areas: 
+    "nav header header"
+    "nav main side"
+    "nav main side";
+  grid-template-rows: 80px 1fr 70px;  
+  grid-template-columns: 15% 1fr 20%;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  height: 100vh;
+  margin: 0;
+  margin-right: 5px;
+
+/*achtergrond*/
+  background: linear-gradient(-45deg, #ee52e6, #b73ce7, #11a0d4, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+} 
+@font-face {
+  font-family: 'Coolvetica';
+  src:  url('coolvetica.rg-regular.otf');
+}
+* {
+  font-family: Coolvetica;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+#pageHeader {
+  grid-area: header;
+
+}
+#mainArticle { 
+  grid-area: main;      
+}
+#mainNav { 
+  grid-area: nav; 
+}
+#side { 
+  grid-area: side; 
+} 
+
+
+/* padding, achtergrondkleur, radius*/
+header, main, aside {
+  padding: 5px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+header {
+  margin-right: 15px;
+  margin-left: 5px;
+  height: 75px;
+  background: #12183F;
+}
+aside{
+  background: #12183F;
+  margin-right: 15px;
+}
+main, aside {
+  margin-bottom: 30px;
+  position: static;
+}
+
+/*nav padding, achtergrondkleur en opmaak tekst*/    
+nav{
+  padding: 1.2em;
+  background: #12183F;
+  margin-bottom: 0;
+}
+nav ul {
+  list-style-type: none;
+
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  line-height: 50px;
+}
+nav ul li a.active, nav ul li a:hover {
+  color: #ffff;
+}
+a:hover a.active{
+  font-family: cursive;
+}
+
+/*main section -> nested grid, divs en opmaak van divs*/
+h2{
+  color: white;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+#inner-grid {
+  display: grid;
+  grid-template-columns: 450px 720px;
+  grid-template-rows: 400px 369px;
+  grid-gap: 20px;
+  height: 100.5%;
+}
+#inner-grid > div {
+  background: #12183F;
+  padding: 8px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* tekst bij profiel en foto*/
+div ul {
+  list-style-type: none;
+  text-decoration: none;
+  line-height: 30px;
+  text-align: center;
+  margin-right: 30px;
+  margin-top: 20px;
+}
+.profiel{
+  height: 200px;
+  margin-top: 20px;
+}
+
+/*percentage balken*/  
+span{  
+  line-height: 50px;
+}
+.percent{
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: rgb(2, 3, 43);
+  display: block;
+  margin-top: 6px;
+
+}
+.percent div {
+  position:absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background:#11a0d4 ;
+}
+#rood{
+  background: #e25962;
+}
+#paars{
+  background: #6056c5;
+}
+#geel{
+  background: #f6a042;
+}
+#groen{
+  background: #67c280;
+}
+
+.vakken{
+  max-height: 300px;
+
+  border-radius: 10px;
+}
+/*photo growth*/
+.groei{
+  max-width: 600px;
+  height: auto;
+  margin-top: 80px;
+  border-radius: 10px;
+}
+
+/*kalender*/
+h2{
+  margin-bottom: 15px;
+}
+.jzdbox1 {
+  width:315px; 
+  border-radius:10px; 
+  overflow:hidden; 
+  display:block; 
+  margin-bottom:10px; 
+  box-shadow:0 0 10px #201d1c; 
+  margin:0 auto; 
+}
+
+.jzdcal {
+  padding:0 10px 10px 10px; 
+  box-sizing:border-box!important; 
+  background: #6056c5;
+}
+
+.jzdcalt {
+  font:18px 'Coolvetica'; 
+  font-weight:700; 
+  color: white; 
+  display:block; 
+  margin:18px 0 0 0; 
+  text-transform:uppercase; 
+  text-align:center; 
+  letter-spacing:3px;
+}
+
+.jzdcal span {
+  font:16px 'Coolvetica'; 
+  font-weight:400; 
+  color: white; 
+  text-align:center; 
+  width:42px; 
+  height:42px; 
+  overflow:hidden; 
+  line-height:40px;
+  float: left;
+}
+
+.jzdcal .jzdb:before {
+  opacity:0.3; 
+  content:'o';
+}
+
+.circle {
+  border:1px solid white; 
+  box-sizing:border-box!important; 
+  border-radius:200px!important;
+}
+
+span[data-title]:hover:after, 
+div[data-title]:hover:after {
+  font: 15px 'Coolvetica'; 
+  font-weight:400; 
+  content:attr(data-title); 
+  position:absolute; 
+  margin:0 0 100px; 
+  background:#282423; 
+  border:1px solid white; 
+  color:white; 
+  padding:5px; 
+  z-index:9999; 
+  min-width:150px; 
+  max-width:150px;
+}
+
+/*kalender taken*/
+.kalender{
+margin-top: 50px;
+}
+.kalenderli{
+  list-style-type: none;
+  text-decoration: none;
+  margin-left: 45px;
+  line-height: 30px;
+}
+
+/*responsive*/
+@media all and (max-width: 575px) {
+  body { 
+    grid-template-areas: 
+      "header"
+      "nav"
+      "main"
+      "side"
+      ;
+    grid-template-rows: 80px 1fr 70px 1fr 70px;  
+    grid-template-columns: 1fr;
+  }
+}
+
+/*credits 
+
+algemene hulp bij code te vormen
+https://www.w3schools.com/
+https://www.quackit.com/
+https://www.freecodecamp.org/
+https://developer.mozilla.org/
+
+code gekoppiert en aangepast
+https://codepen.io/P1N2O/pen/pyBNzX?__cf_chl_captcha_tk__=MPSLppnZVP0rX_PlFalY1e0_.PZJoVX87Q5zFQrltdY-1637682066-0-gaNycGzNB1E
+https://www.sliderrevolution.com/resources/html-calendar/
+
+*/
